@@ -11,27 +11,13 @@ function App() {
     console.log(`JWT value is:\n${jwt}`);
   }, [jwt]);
 
-  async function login(){ 
-    console.log(username, password);
 
-    let result = await fetch(
-      process.env.BACKEND_URL + "/users/",
-      {
-        method: "POST", // or 'PUT'
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({username: username, password: password}),
-      }
-    );
 
-    console.log(result);
 
-  }
 
   return (
     <div className="App">
-      <label>Username:</label>
+      <label data-testid="bananas">Username:</label>
       <input 
         type="text" 
         name="usernameInput" 
